@@ -20,12 +20,3 @@
   </ItemGroup>
 
 </Project>
-
-
-Polly
-Polly.Extensions.Http
-Refit
-Refit.HttpClientFactory
-Serilog
-Serilog.AspNetCore
-Serilog.Sinks.Console

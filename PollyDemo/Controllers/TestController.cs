@@ -16,7 +16,7 @@ namespace PollyDemo.Controllers
         public async Task<IActionResult> GetResultFromService1WithErrorAsync([FromServices] IService1 service, CancellationToken cancellationToken = default)
         {
             var response = await service.GetWithErrorAsync(cancellationToken);
-            return Ok(response);
+            return Ok(response.ReasonPhrase);
         }
 
         [HttpGet("service2/delay")]
@@ -29,21 +29,20 @@ namespace PollyDemo.Controllers
         public async Task<IActionResult> GetResultFromService2WithErrorAsync([FromServices] IService2 service, CancellationToken cancellationToken = default)
         {
             var response = await service.GetWithErrorAsync(cancellationToken);
-            return Ok(response);
+            return Ok(response.ReasonPhrase);
         }
 
         [HttpGet("service3/delay")]
-        public async Task<IActionResult> GetResultFromService3WithDelayAsync([FromServices] IService2 service, [FromQuery] int delay, CancellationToken cancellationToken = default)
+        public async Task GetResultFromService3WithDelayAsync([FromServices] IService2 service, [FromQuery] int delay, CancellationToken cancellationToken = default)
         {
-            var response = await service.GetWithDelayAsync(delay, cancellationToken);
-            return Ok(response);
+             await service.GetWithDelayAsync(delay, cancellationToken);
         }
 
         [HttpGet("service3/error")]
         public async Task<IActionResult> GetResultFromService3WithErrorAsync([FromServices] IService3 service, CancellationToken cancellationToken = default)
         {
             var response = await service.GetWithErrorAsync(cancellationToken);
-            return Ok(response);
+            return Ok(response.ReasonPhrase);
         }
     }
 }
