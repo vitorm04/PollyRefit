@@ -1,6 +1,6 @@
 # .NET - Polly Custom Policies by Service
 
-Esse projeto tem como objetivo, desmostrar uma implementação da biblioteca Polly com regras de timeout/retry/circuitBreaker personalizadas por serviço. 
+Esse projeto tem como objetivo, demonstrar uma implementação da biblioteca Polly com regras de timeout/retry/circuitBreaker personalizadas por serviço. 
 
 # Instalação
 
